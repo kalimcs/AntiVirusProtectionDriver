@@ -1,11 +1,11 @@
 /*
-����֧��Win8.Win10.Win11(��֧��Win7)
-��Щ�ط�д�Ĳ��Ǻܺ�(��������)
-�������Ļ�����ֱ��ȥ��Release
-����ֱ�Ӵ���pid������
-ûд����֮���
-��ֻ�б������̺�ǿɱ����֮���
-���ڿ��ܻ�ӱ��
+驱动支持Win8.Win10.Win11(不支持Win7)
+有些地方写的不是很好(大佬勿喷)
+不会编译的话可以直接去下Release
+都是直接传入pid就行了
+没写拦截之类的
+就只有保护进程和强杀进程之类的
+后期可能会加别的
 */
 #include "Driver.h"
 
@@ -74,7 +74,7 @@ NTSTATUS PPProtection(ULONG pid)
 
     if (NT_SUCCESS(status))
     {
-        *(int*)((ULONG64)pEprocess + 0x87a) = 0x72;  //Win10,11��ƫ�ƶ���0x87a 0x72��Ӧ����PP_System
+        *(int*)((ULONG64)pEprocess + 0x87a) = 0x72;  //Win10,11的偏移都是0x87a 0x72对应的是PP_System
     }
     return STATUS_SUCCESS;
 }
@@ -85,11 +85,11 @@ NTSTATUS PPProtection8(ULONG pid)
 
     if (NT_SUCCESS(status))
     {
-        *(int*)((ULONG64)pEprocess + 0x67a) = 0x72;  //Win8��ƫ�ƶ���0x67a 0x72��Ӧ����PP_System
+        *(int*)((ULONG64)pEprocess + 0x67a) = 0x72;  //Win8的偏移都是0x67a 0x72对应的是PP_System
     }
     return STATUS_SUCCESS;
 }
-//���ZwKillProcessд���е��ò������ⲻ��((((((
+//这个ZwKillProcess写的有点烂不过问题不大((((((
 NTSTATUS ZwKillProcess(ULONG Pid) {
 
     NTSTATUS status = STATUS_SUCCESS;
@@ -102,7 +102,7 @@ NTSTATUS ZwKillProcess(ULONG Pid) {
     ZwClose(ProcessHandle);
     return status;
 }
-//���������ֻ�Ǻܼ򵥵Ķ���,���Ӧ��ARK���߾��ܿ�������
+//这里的隐藏只是很简单的断链,随便一个ARK工具就能看到进程
 NTSTATUS HideProcess(ULONG pid)
 {
     PEPROCESS process;
