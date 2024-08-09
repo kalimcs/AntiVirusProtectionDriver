@@ -1,0 +1,25 @@
+﻿  Building 'AntiVirusProtectionDriver' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping x64\Release\AntiVirusProtectionDriver.inf
+  Stamping [Version] section with DriverVer=08/09/2024,20.9.29.157
+  Driver.cpp
+D:\AntiVirus\AntiVirusProtectionDriver\AntiVirusProtectionDriver\Driver.cpp(38,39): warning C4129: “A：: 不可识别的字符转义序列
+D:\AntiVirus\AntiVirusProtectionDriver\AntiVirusProtectionDriver\Driver.cpp(157,52): warning C4100: “DeviceObject”: 未引用的形参
+  AntiVirusProtectionDriver.vcxproj -> D:\AntiVirus\AntiVirusProtectionDriver\x64\Release\AntiVirusProtectionDriver.sys
+  Done Adding Additional Store
+  Successfully signed: D:\AntiVirus\AntiVirusProtectionDriver\x64\Release\AntiVirusProtectionDriver.sys
+  
+  Driver is 'Universal'.
+  ........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  D:\AntiVirus\AntiVirusProtectionDriver\x64\Release\AntiVirusProtectionDriver\antivirusprotectiondriver.cat
+  Done Adding Additional Store
+  Successfully signed: D:\AntiVirus\AntiVirusProtectionDriver\x64\Release\AntiVirusProtectionDriver\antivirusprotectiondriver.cat
+  
