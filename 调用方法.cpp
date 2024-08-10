@@ -8,7 +8,7 @@
 #define IOCTL_HIDDEN_PROCESS8     CTL_CODE(FILE_DEVICE_UNKNOWN, 0x804, METHOD_BUFFERED, FILE_ANY_ACCESS)  //隐藏进程(没啥用qwq)win8用这个
 int main()
 {
-  //这一段是甚至自己保护
+  //这一段是设置自己保护
   //自己写驱动加载
   //通信DeviceIoControl就行了
   //自己判断系统版本进行替换BOOL status = DeviceIoControl(hDevice, IOCTL_PROTECTION_PROCESS, &pid, sizeof(DWORD), NULL, 0, &bytesReturned, NULL);这里的IOCTL_PROTECTION_PROCESS是win10，11的win8的话替换成IOCTL_PROTECTION_PROCESS
